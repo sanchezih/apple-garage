@@ -16,7 +16,7 @@ public class MongoDBSingleton {
 	
 	private static final String dbHost = "9.13.76.227";
 	private static final int dbPort = 27017;
-	private static final String dbName = "dbName";
+	private static final String dbName = "testBooks";
 	private static final String dbUser = "user";
 	private static final String dbPassword = "password";
 	
