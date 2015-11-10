@@ -1,0 +1,1 @@
+In this example I have created a REST web-service which stores some data about the books in the MongoDB database and will retrieve those data in the JSON format. I have used Openshift cloud platform to host the web application. 
