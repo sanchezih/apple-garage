@@ -1,0 +1,8 @@
+applications:
+- path: JavaHelloWorldApp.war
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: AhorcadoAG
+  host: AhorcadoAG
+  disk_quota: 1024M

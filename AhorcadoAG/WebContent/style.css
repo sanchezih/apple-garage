@@ -1,0 +1,77 @@
+/* style.css
+ * This file provides css styles.
+ */
+
+h1, h2, h3 {
+	text-align: center;
+	background-color: #84bbf3;
+}
+
+table, td, th {border-collapse:collapse}
+
+#container{
+	width:800px;
+}
+
+#menu{
+	height:500px;
+	width:200px;
+	float:left;
+}
+
+#content{
+	height:500px;
+	widht:600px;
+}
+
+#footer{
+	clear:both;
+}
+
+.letterActive {
+	background-color:#bddbfa;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 6px;
+	width: 11px;
+	text-align:center;
+}
+
+.letterActive:hover {
+	background-color:#80b5ea;
+}
+
+.letterActive:active {
+	position:relative;
+	top:1px;
+}
+
+.letterInactive {
+	background-color:#bddbfa;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 6px;
+	width: 11px;
+	text-align:center;
+}
+
+.wordLetter {
+	display:inline-block;
+	cursor:pointer;
+	color:#cc0000;
+	font-family:arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:6px 6px;
+	width: 11px;
+	text-align:center;
+
