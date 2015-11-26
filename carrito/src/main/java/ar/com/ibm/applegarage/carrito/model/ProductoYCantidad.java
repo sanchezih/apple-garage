@@ -8,7 +8,7 @@ public class ProductoYCantidad {
 	public ProductoYCantidad(){
 		
 	}
-
+	
 	public ProductoYCantidad(Producto producto, int cantidad) {
 		super();
 		this.producto = producto;

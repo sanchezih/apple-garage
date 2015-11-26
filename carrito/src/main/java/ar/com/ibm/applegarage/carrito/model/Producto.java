@@ -7,11 +7,11 @@ import java.util.Map;
 
 public class Producto {
 	
-	private String codigo;
+	private String _r;
 //	private String nombre;
 //	private List<String> categorias = new ArrayList<>();
 	private int precio;
-	private List<Propiedad> propiedades = new ArrayList<>();
+	private List<Propiedad> propiedades = new ArrayList();
 //	private Map<String,List<String>> templates = new HashMap<>();
 	
 	public Producto(){
@@ -19,23 +19,23 @@ public class Producto {
 	}
 	
 	public String getCodigo() {
-		return codigo;
+		return _r;
 	}
 	
 	
 	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+		this._r = codigo;
 	}
 	
 	
-	public String getNombre() {
-		return nombre;
+	/*public String getNombre() {
+		//return nombre;
 	}
 
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
+	}*/
 
 
 	public int getPrecio() {
