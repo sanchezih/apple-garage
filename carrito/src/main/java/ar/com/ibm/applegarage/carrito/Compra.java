@@ -1,8 +1,8 @@
-package com.ibm.ar.carrito.classes.compra;
+package ar.com.ibm.applegarage.carrito;
 
 import java.util.Date;
 
-import com.ibm.ar.carrito.classes.carrito.Carrito;
+import ar.com.ibm.applegarage.carrito.model.Carrito;
 
 public class Compra {
 	private Date fecha;
