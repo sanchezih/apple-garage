@@ -1,15 +1,15 @@
 package ar.com.ibm.applegarage.carrito.model;
 
-public class ProductoYCantidad {
+public class Item {
 
 	private Producto producto;
-	private int cantidad;
+	private long cantidad;
 	
-	public ProductoYCantidad(){
+	public Item(){
 		
 	}
 	
-	public ProductoYCantidad(Producto producto, int cantidad) {
+	public Item(Producto producto, long cantidad) {
 		super();
 		this.producto = producto;
 		this.cantidad = cantidad;
@@ -23,12 +23,12 @@ public class ProductoYCantidad {
 		this.producto = producto;
 	}
 
-	public int getCantidad() {
+	public long getCantidad() {
 		return cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+	public void setCantidad(long l) {
+		this.cantidad = l;
 	}
 	
 }

@@ -1,49 +1,62 @@
 package ar.com.ibm.applegarage.carrito.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Producto {
 	
-	private String _r;
-//	private String nombre;
+	private String codigo;
+	private String nombre;
 //	private List<String> categorias = new ArrayList<>();
-	private int precio;
-	private List<Propiedad> propiedades = new ArrayList();
+	private float precio;
+	private List<Propiedad> propiedades = new ArrayList<>();
 //	private Map<String,List<String>> templates = new HashMap<>();
 	
 	public Producto(){
 		
 	}
 	
+	
+	
+	public Producto(String codigo, String nombre, float precio, List<Propiedad> propiedades) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.propiedades = propiedades;
+	}
+
+
+
 	public String getCodigo() {
-		return _r;
+		return codigo;
 	}
 	
 	
 	public void setCodigo(String codigo) {
-		this._r = codigo;
+		this.codigo = codigo;
 	}
 	
 	
-	/*public String getNombre() {
-		//return nombre;
+	public String getNombre() {
+		return nombre;
 	}
 
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}*/
+	}
 
 
-	public int getPrecio() {
+	public float getPrecio() {
 		return precio;
 	}
 	
 	
-	public void setPrecio(int precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 

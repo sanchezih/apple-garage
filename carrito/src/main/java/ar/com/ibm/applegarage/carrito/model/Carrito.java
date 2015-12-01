@@ -1,13 +1,14 @@
 package ar.com.ibm.applegarage.carrito.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Carrito {
-	private Map <String,Long> productos= new HashMap();
+	private Map <String,Long> productos= new HashMap<>();
+//	private List<Item> productos = new ArrayList<>();
 	
 	public Map <String,Long> getProductos() {
 		return productos;
@@ -17,10 +18,10 @@ public class Carrito {
 		this.productos = productos;
 	}
 	
-	public void agregarProductoIgual(String id, Long cant)
+	public void agregarProductoIgual(String id, long cant)
 	{
-		Long aux = productos.get(id);
-		productos.replace(id, aux+cant);
+		long aux = productos.get(id);
+		productos.put(id, aux+cant);
 	}
 	public void agregar(String id, Long cant)
 	{
@@ -28,7 +29,7 @@ public class Carrito {
 	}
 	public void cambiar(String id, Long cant)
 	{
-		productos.replace(id, cant);
+		productos.put(id, cant);
 	}
 	public void eliminar(String id)
 	{

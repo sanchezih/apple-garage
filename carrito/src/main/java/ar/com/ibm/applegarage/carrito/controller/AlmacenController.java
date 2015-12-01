@@ -1,45 +1,77 @@
 package ar.com.ibm.applegarage.carrito.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import ar.com.ibm.applegarage.carrito.model.Item;
 import ar.com.ibm.applegarage.carrito.model.Producto;
+import ar.com.ibm.applegarage.carrito.model.Propiedad;
 import ar.com.ibm.applegarage.carrito.service.AlmacenService;
 
 @Path("/stock")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+//@Produces(MediaType.APPLICATION_JSON)
+//@Consumes(MediaType.APPLICATION_JSON)
 public class AlmacenController {
 
 	
 	AlmacenService svc = new AlmacenService();
 	
+	
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/items")
 	@GET
-	public void getStockItems(){
-		
+	public String getStockItems(){
+		return "devolver aca los docs";
 	}
 	
+	@GET
+	@Path("/test")
+	public String test(){
+		
+		Propiedad prop1 = new Propiedad();
+		Propiedad prop2 = new Propiedad();
+		prop1.setKey("proyecto");prop1.setValue("mapple");
+		prop2.setKey("color");prop2.setValue("indiGo!");
+		List<Propiedad> props = new ArrayList<>();
+		props.add(prop1);props.add(prop2);
+		
+		Producto p1 = new Producto();
+		p1.setCodigo("asd123");
+		p1.setNombre("cubierto_descartable");
+		p1.setPrecio((float)32.5);
+		p1.setPropiedades(props);
+		
+		Item item = new Item();
+		item.setProducto(p1);
+		item.setCantidad(24);
+		
+		svc.test(item);
+		
+		return "ok";
+	}
+	
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
 	@Path("/items")
 	@POST
-	public void addStockItem(Producto producto,
-								@QueryParam("cant") Long cant){
-		if (cant.intValue()<=0){
-			cant = 1L;
+	public String addStockItem(Producto producto,
+								@QueryParam("cant") long cant){
+		if (cant<=0){
+			cant = 1;
 		}
-		svc.agregarItem(producto, cant.intValue());
-		
+		svc.agregarItem(new Item(producto, cant));
+		return "ok";
 	}
 	
-	
+/*	
 //	este metodo modifica el producto, y opcionalmente su cantidad
 	@Path("/items/{idProducto}")
 	@PUT
@@ -74,4 +106,6 @@ public class AlmacenController {
 		
 	}
 	
+*/
+
 }
